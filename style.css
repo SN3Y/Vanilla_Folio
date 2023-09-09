@@ -1,0 +1,493 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+.form{
+    background-color: #000000;
+    margin: auto;
+    margin-top: 3rem;
+    width: 90%;
+    max-width: 400px;
+    padding: 4.5em 3em;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px -5px rgb(0, 0, 0 / 30%);
+    text-align: center;
+    border: solid #fff;
+    z-index: 5;
+}
+.formTitle{
+    color: #ffffff;
+    font-size: 2rem;
+    margin-bottom: .5em;
+}
+
+.formContainer{
+    display: grid;
+    gap: 2.5em;
+}
+.formGroup{
+    position: relative;
+    color: #000000;
+}
+.formLink{
+    font-weight: 400;
+    color: #000000;
+}
+.formSubmit{
+    height: 30px;
+    width: auto;
+    font-size: 1em;
+    pointer-events: unset;
+    cursor: pointer;
+}
+.modalContainer{
+    position: fixed;
+    background-color: #233142;
+    opacity: 0;
+    pointer-events: none;
+    background-image: url(Imgs/modal-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+    height: 100vh;
+    width: 100vw;
+    z-index: 5;
+    transition: opacity .5s ease-out;
+}
+.activeModal{
+    opacity: 1;
+    pointer-events: unset;
+}
+.formInput{
+    width: 100%;
+    background: none;
+    color:#ffffff;
+    font-size: 1rem;
+    padding: .6em .6em;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #fff;
+    z-index: 5;
+}
+.formInput:focus + .formLabel,
+.formInput:not(:placeholder-shown) + .formLabel{
+    transform: translateY(-12px) scale(.7);
+    transform-origin: left top;
+    
+}
+.msgForm{
+    display: grid;
+    gap: 1rem;
+    
+}
+.msgLabel{
+    color: #ffffff;
+}
+.msgInput{
+    background-color: #233142;
+    color: #ffffff;
+    padding: 10px;
+    text-align: start;
+    height: 120px;
+    resize: none;
+}
+.formLabel{
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    transform: translateY(10px);
+    transition: transform .5s, color .3s;
+}
+.close{
+    position: absolute;
+    right: 2em;
+    font-size: 2rem;
+    cursor: pointer;
+    
+}
+/* header */
+.header{
+    color: #fff;
+    font-weight: bold;
+    position: fixed;
+    display: grid;
+    grid-template-columns: max-content max-content;
+    justify-content: space-around;
+    width: 100%;
+    height: 80px;
+    background-color: #233142;
+    line-height: 80px;
+    z-index: 2;
+    border-bottom: solid #fff;
+}
+.menu{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 0 auto-fit;
+    list-style: none;
+    font-size: 1.2rem;
+    z-index: 2;
+}
+.check, .conocerOpen, .conocerClose{
+    display: none;
+    pointer-events: none;
+}
+.item{
+    text-align: center;
+}
+.link{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: .5s;
+}
+.conocerMenu{
+    height: 0;
+    overflow: hidden;
+    pointer-events: none;
+    background-color: #233142;
+    list-style: none;
+    padding: 0 0.5em;
+    text-align: start;
+    transition: .3s ease-in-out;
+    z-index: 4;
+}
+.conocerLink{
+    text-decoration: none;
+    color: #fff;
+    transition: .3s ease;
+}
+.conocerLink:hover{
+    box-shadow: inset 120px 0 0 0 #fff;
+    color: #233142;
+}
+.conocerHeight{
+    padding: 84px 0;
+    height: 84px;
+    z-index: 4;
+}
+.activeClass{
+    z-index: 4;
+    position: inherit;
+    height: auto;
+    pointer-events: unset;   
+    border: solid white;
+    border-top: none;
+}
+
+/* Sections */
+.section{
+    height: 100%;
+    width: 100%;
+}
+.one{
+    padding-top: 80px;
+    display: grid;
+    overflow: hidden;
+    grid-template-columns:100%;
+    grid-template-rows: 100%;
+    grid-template-areas: "a";
+    align-items: center;
+    text-align: center;
+}
+.bg1{
+    background-image: url(Imgs/section1copia.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(3px);
+    height: 100vh;
+    grid-area: a;
+    z-index: 0;
+}
+.intro{
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    grid-area: a;
+    display: grid;
+    flex-wrap: wrap;
+    width: fit-content;
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+    border: solid white;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 5rem;
+}
+.two{
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: 1fr, 1fr, 1fr;
+    overflow: hidden;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    grid-template-areas: "a";
+    height: 100%;
+}
+.bg2{
+    background-image: url(Imgs/section2.png);
+    background-position: center;
+    background-size: cover;
+    filter: blur(5px);
+    height: 100vh;
+    width: 100vw;
+    grid-area: a;
+    z-index: 0;
+}
+
+.formacion{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr, 0.2fr, 1.8fr;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    color: #fff;
+    grid-area: a;
+    font-size: 2rem;
+    height: 100vh;
+}
+.certificados{
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    font-size: 1rem;
+    height: 70%;
+}
+.fpro{
+    padding: 1em;
+    display: grid;
+    list-style: none;
+    
+}
+.ftecnica{
+    display: grid;
+    list-style: none;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
+    padding: 1em;
+}
+.texto{
+    display: grid;
+}
+#texto{
+    position: relative;
+    display: grid;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    height: fit-content;
+    z-index: 1;
+    font-size: 2rem;
+    grid-area: a;
+}
+.certiItem{
+    margin-top: 0.5em;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.certiItem a{
+    justify-content: center;
+    display: grid;
+    cursor: pointer;
+}
+.goals{
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    display: grid;
+    font-size: 2rem;
+    padding: 0 2em;
+    align-items: center ;
+    justify-content: center;
+}
+.goalItem{
+    text-align: justify;
+}
+.three{
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 1);
+    display: grid;
+    gap: 2em;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 1fr 1fr;
+    overflow: hidden;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    color: #fff;
+}
+.technologies{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    list-style: none;
+}
+.tecItem{
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    font-size: 2rem;
+}
+.text3{
+    font-size: 3rem;
+    color: #fff;
+}
+.proyectosLink{
+    width: 100%;
+    display: grid;
+    text-align: center;
+    justify-content: center;
+}
+.tech{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    overflow: hidden;
+    height: 60px;
+    transition: 0.4s ease-in;
+}
+.tech:hover{
+    background-color: #233142;
+    grid-template-rows: 1fr, 1fr;
+    height: 120px;
+}
+.repotext{
+    font-size: 3em;
+}
+@media (max-width:620px){
+    .header{
+        width: 100%;
+        display: grid;
+        z-index: 2;
+        grid-template-columns: 6fr 1fr;
+        grid-template-rows: max-content;
+        grid-template-areas: "logo menu";
+        justify-content: space-between;
+        text-align: start;
+    }
+    .logo{
+        padding-left: 2em;
+    }
+    .conocerOpen,.conocerClose{
+        display: block;
+        z-index: 3;
+    }
+    .conocerClose{
+        opacity: 0;
+    }
+    .check:checked~ .conocerOpen{
+        opacity: 0;
+    }
+    .check:checked~.conocerClose{
+        opacity: 1;
+    }
+    .conocerOpen, .conocerClose{
+        pointer-events: unset;
+        grid-area: menu;
+        z-index: 3;
+        line-height: 90px;
+        text-align: end;
+        cursor: pointer;
+        transition: .3s ease;
+        width: 30px;
+        height: 80px;
+    }
+    .menu{
+        display: grid;
+        background-color: #233142;
+        grid-template-columns: 1fr;
+        grid-template-rows:max-content max-content max-content;
+        width: 0;
+        grid-area: menu;
+        overflow: hidden;
+        padding: 0 2em;
+        list-style: none;
+        font-size: 1.2rem;
+        z-index: 0;
+        transition: .4s ease-in;
+        height: 0;
+    }
+    .menuActive{
+        position: absolute;
+        right: 0;
+        top: 0;
+        row-gap: 2em;
+        padding-top: 25vh;
+        height: 100vh;
+        border-left: solid wheat;
+        border-top-left-radius: 20%;
+        width: 60vw;
+        z-index: 2;
+    }
+    .conocerMenu{
+        width: max-content;
+        padding: 0 1em;
+        border: none;
+    }
+    .conocerLink:hover{
+        border-bottom: solid #fff;
+    }
+    .one{
+        padding-top: 80px;
+        display: grid;
+        height: 100vh;
+        width: 100%;
+        grid-template-columns: 1fr;
+        overflow: hidden;
+    }
+    .bg1{
+        background-position: -100vw;
+    }
+    .intro{
+        display: flex;
+        position: relative;
+        color: #fff;
+        flex-wrap: wrap;
+        font-size: 2em;
+        
+    }
+    #texto{
+        font-size: 1rem;
+    }
+    .certificados{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr, 0.5fr, 1.5fr;
+        font-size: 1rem;
+        border: solid white;
+        height: 100%;
+    }
+    .goals{
+        display: grid;
+        font-size: 0.8rem;
+    }
+    .tech{
+        font-size: 0.8rem;
+    }
+    .form{
+        position: relative;
+        height: 78vh;
+        font-size: 1rem;
+        padding: 1rem;
+        margin-top: 4rem;
+        width: 300px;
+    }
+    .close{
+        right: 1rem;
+        top: 0;
+    }
+} 

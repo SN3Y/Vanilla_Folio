@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Folio</title>
+</head>
+<body>
+    <header class="header">
+        <Span class="logo">SN3YZ</Span>
+        <ul class="menu">
+            <li class="item"><a href="#sec1" class="link"><span>Inicio</span></a></li>
+            <li class="item">
+                <a href="" class="link"><span class="conocer">Conocer</span></a>
+                <ul class="conocerMenu">
+                    <li class="conocerItem conocerSpan"><a href="#sec2" class="conocerLink"><span>¿Quién Soy?&nbsp;&nbsp; <box-icon color="#fff" name='user'></box-icon></span></a></li>
+                    <li class="conocerItem"><a href="#texto" class="conocerLink"><span>Formación &nbsp;&nbsp;&nbsp;&nbsp; <box-icon type='solid' color="#fff" name='graduation'></box-icon></span></a></li>
+                    <li class="conocerItem"><a href="#aspiraciones" class="conocerLink"><span>Aspiraciones&nbsp; <box-icon type='solid' color="#fff" name='star-half'></box-icon></span></a></li>
+                </ul>
+            </li>
+            <li class="item"><a href="#sec3" class="link"><span>Habilidades</span></a></li>
+            <li class="item"><a href="" class="link contacto"><span>Contacto</span></a></li>
+        </ul>
+        <input type="checkbox" class="check" id="conocerMenu">
+        <label for="conocerMenu" class="conocerOpen"><box-icon color="#fff" name='menu'></box-icon></label>
+        <label for="conocerMenu" class="conocerClose"><box-icon color="#fff" name='x'></box-icon></label>
+    </header>
+    <div class="modalContainer">
+        <div class="modal modalClose">
+            <p class="close">X</p>
+            <div class="form">
+                <h2 class="formTitle">Contactar</h2>
+                <div class="formContainer">
+                    <div class="formGroup">
+                        <input type="text" id="form_name" class="formInput" required placeholder="">
+                        <label for="form_name" class="formLabel">Nombre:</label>
+                            <span class="formLink"></span>
+                    </div>
+                    <div class="formGroup">
+                        <input placeholder="" type="form_email" id="form_email" required class="formInput" placeholder="">
+                        <label for="form_email" class="formLabel">Correo:</label>
+                        <span class="formLink"></span>
+                    </div>
+                    <div class="msgForm">
+                        <label for="form_message" class="msgLabel">Mensaje:</label>
+                        <textarea id="form_message" required class="msgInput"></textarea>
+                        <span class="formLink"></span>
+                    </div>
+                    <input type="submit" onclick="validateForm()" class="formSubmit" value="Enviar">
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="section one" id="sec1">
+        <div class="bg1"></div> 
+        <h1 class="intro" id="sec2">Sneyder, Desarrollador Front Junior</h1>
+    </section>
+    <section class="section two">
+        <div class="bg2"></div>
+        <div class="formacion">
+            <div class="texto">
+            <h2 id="texto">Hola, soy Sneider Santos estudiante de Ingeniería de sistemas, <br>
+             carrera por la cual descubrí la programación de Interfaces de Usuario, de allí nace mi <br>
+             gusto por la programación, y por lo cual me dedico a aprender desarrollo FrontEnd desde el 2022. 
+            </h2>
+            </div>
+            <div class="certificados" id="certi">
+                <div>
+                    <h2 for="fpro">Formación Profesional</h2>
+                    <ul class="fpro">
+                        <li>Programa Virtual Ingeniería de Sistemas Uniremington</li>
+                        <li class="certiItem">Noveno semestre actualmente
+                            <a><img src="Imgs/certificados.svg" alt="dwlcertificado"></a>
+                        </li>
+                    </ul></div>
+                <div>
+                    <h2 for="ftecnica">Formación Técnica</h2>
+                    <ul class="ftecnica">
+                        <li class="certiItem">Certificado Cognitive Class en Bases de datos Relacionales y SQL
+                            <a href="Certificados/IBM DB0101EN Certificate _ Cognitive Class.pdf" download="IBM DB0101EN Certificate _ Cognitive Class.pdf"><img src="Imgs/certificados.svg" alt="dwlcertificado"></a>
+                        </li>
+                        <li class="certiItem">Certificado Cognitive Class por IBM en Python para Ciencia de datos
+                            <a href="Certificados/IBM PYTHON CERTIFICATE.pdf" download="IBM PYTHON CERTIFICATE.pdf"><img src="Imgs/certificados.svg" alt="dwlcertificado"></a>
+                        </li>
+                        <li class="certiItem">Certificado Institucional en Bases de Datos por Uniremington
+                            <a href="Certificados/Certificado_Institucional_BasedeDatos.pdf" download="Certificado_Institucional_BasedeDatos.pdf"><img src="Imgs/certificados.svg" alt="dwlcertificado"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="goals" id="aspiraciones">
+                <h2>Aspiraciones</h2>
+                <ul class="aspiraciones">
+                    <li class="goalItem">Aplicar el conocimiento adquirido en nuevos proyectos de trabajo</li>
+                    <li class="goalItem">Continuar aprendiendo tecnologías que me ayuden a mejorar profesionalmenet</li>
+                    <li class="goalItem">Adquirir experiencia necesaria para convertirme en un desarrollador Full Stack</li>
+                </ul>
+            </div>    
+        </div>
+    </section>
+    <section class="section three" id="sec3">
+        <h2 class="text3">Tecnologías que más utilizo</h2>
+        <ul class="technologies">
+            <li class="tecItem tech"><img src="Imgs/html-logo.svg" alt="html-logo"><h3 class="logoLabel">Html</h3></li>
+            <li class="tecItem tech"><img src="Imgs/css-logo.svg" alt="css-logo"><h3 class="logoLabel">Css</h3></li>
+            <li class="tecItem tech"><img src="Imgs/js-logo.svg" alt="js-logo"></box-icon><h3 class="logoLabel">JavaScript</h3></li>
+            <li class="tecItem tech"><img src="Imgs/react-logo.svg" alt="react-logo"></box-icon><h3 class="logoLabel">React</h3></li>
+            <li class="tecItem tech"><img src="Imgs/vite-logo.svg" alt="vite-logo"><h3 class="logoLabel">Vite</h3></li>
+        </ul>
+        <div class="proyectosLink">
+            <h1 class="repotext">Proyectos</h1>
+            <a href="https://github.com/SN3Y?tab=repositories"><img id="git-logo" src="Imgs/github-logo.svg" alt="github-logo"></a>
+        </div>
+    </section>
+    <section class="section four" id="sec4">
+        
+    </section>
+</body>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("godm4XtXsiQn4HLVu");
+   })();
+</script>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+<script src="script.js"></script>
+</html>
